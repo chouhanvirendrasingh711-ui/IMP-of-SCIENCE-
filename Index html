@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Science Revision Notes</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: white;
+        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        width: 85%;
+        max-width: 400px;
+        padding: 30px 20px;
+        background: rgba(255,255,255,0.12);
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        backdrop-filter: blur(10px);
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        font-size: 28px;
+    }
+
+    p {
+        color: #ddd;
+        font-size: 15px;
+    }
+
+    input {
+        width: 85%;
+        padding: 13px;
+        margin-top: 15px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        text-align: center;
+        outline: none;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 13px 30px;
+        border: none;
+        border-radius: 10px;
+        background: #00c6ff;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0072ff;
+    }
+
+    #message {
+        margin-top: 15px;
+        color: #ff7777;
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>📚 Science Revision Notes</h1>
+
+    <p>Chapters 1 to 7</p>
+
+    <p>Enter PIN to access the PDF</p>
+
+    <input
+        type="password"
+        id="pin"
+        placeholder="Enter PIN"
+        maxlength="4"
+    >
+
+    <br>
+
+    <button onclick="openPDF()">🔓 Open PDF</button>
+
+    <div id="message"></div>
+
+</div>
+
+<script>
+
+function openPDF() {
+
+    const pin = document.getElementById("pin").value;
+
+    const pdfLink =
+    "https://drive.google.com/file/d/1RfAy-7mWHD-s1tV5ZRQzLlXJs7HUUTNo/view?usp=sharing";
+
+    if (pin === "7889") {
+
+        window.open(pdfLink, "_blank");
+
+    } else {
+
+        document.getElementById("message").innerText =
+        "❌ Wrong PIN! Please try again.";
+
+    }
+}
+
+</script>
+
+</body>
+</html>
